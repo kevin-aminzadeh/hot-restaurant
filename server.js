@@ -1,32 +1,19 @@
 
 const express = require('express'); 
 const app = express(); 
-const flame = require('flame'); 
+const path = require('path');
 // port to list on//
-const PORT  = process.env.PORT || 8080; 
-
-//routes//
-
-const reserveRoute = require('./')
-const tableRoute = require('./')
-const apiRoute = require('./')
-
-//middleware//
-// app.use(express.urlencoded({ extended: true })); 
-// app.use(express.json());
+const PORT  = process.env.PORT || 8080;
 
 
 //return to homepage
 
-app.get('/', (req, res) => {
-    res.send('home'); 
-})
+app.get('/', (req, res) => res.sendFile(path.join(__dirname, 'home.html')))
 
 //applying routers//
 
-app.use('/reserve', reserveRoute);
-app.use('/tables', tableRoute); 
-app.use('/api', apiRoute); 
+app.get('/reserve', (req, res) => res.sendFile(path.join(__dirname, 'reserve.html')));
+app.get('/tables', (req, res) => res.sendFile(path.join(__dirname, 'tables.html')));
 
 
 //call//
