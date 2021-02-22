@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
         integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
         crossorigin="anonymous" />
+    <script src="jquery-3.5.1.min.js"></script>
 </head>
 
 <body style="background-color:#1B262C;">
@@ -22,11 +23,11 @@
             <h3 class="" style="text-align: center">We only 5 tables! Book your seat before they are all gone!</h3>
             <br>
             <div class="text-center">
-                <button class="btn btn-lg btn-primary">
+                <button href="/reserve" class="btn btn-lg btn-primary">
                     <span class="far fa-credit-card"></span>
                     Make a Reservation
                 </button>
-                <button class="btn btn-lg btn-light">
+                <button href="/home" class="btn btn-lg btn-light">
                     <span class="fas fa-house-user"></span>
                 </button>
             </div>
@@ -39,6 +40,7 @@
                 <h3 class="" style="text-align: center">Bookings</h3>
                 <br>
             </div>
+            <div class="reserve-list"></div>
             <!-- list items go here -->
         </div>
     </div>
@@ -49,6 +51,7 @@
                 <h3 class="" style="text-align: center">Waiting list</h3>
                 <br>
             </div>
+            <div class="wait-list"></div>
             <!-- list items go here -->
         </div>
     </div>
@@ -56,14 +59,30 @@
         <div class="container">
             <p>Control Panel</p>
             <p>
-                <a href="" style="text-decoration:none;">Clear Table</a>
+                <a id="clear-table" style="text-decoration:none;">Clear Table</a>
                 |
-                <a href="" style="text-decoration:none;">API Table Link</a>
+                <a href="/api/tables" style="text-decoration:none;">API Table Link</a>
                 |
-                <a href="" style="text-decoration:none;">API Wait List</a>
+                <a href="/api/waitlist" style="text-decoration:none;">API Wait List</a>
             </p>
         </div>
     </footer>
+    <script>
+        const reserveList = $(".reserve-list");
+        const waitList = (".wait-list");
+
+        (document).on("click", ".clear-table", function (event) {
+            event.preventDefault;
+            $.ajax({
+                url: "http://localhost:8080/tables",
+                method: "POST"
+            }).then(function(){
+                alert("Clearing...")
+                reserveList.empty();
+                waitList.empty();
+        });
+    });
+    </script>
 </body>
 
 </html>
