@@ -1,11 +1,14 @@
-const express = require('express'); 
-const reserveRoute = express.Route(); 
+const express = require("express");
+const reserveRouter = express.Router();
+var path = require("path");
 
 //applying data//
 
-const reservationData = require('../data/reservationData')
-const waitListData = require('../data/waitlistData')
+// const reservationData = require("../lib/reservation");
+// const waitListData = require('../lib/waitlistData')
 
-reserveRoute.get('/', (req, res) => {
-    res.send('/reserve'); 
-}); 
+reserveRouter.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "..", "reserve.html"));
+});
+
+module.exports = reserveRouter;
