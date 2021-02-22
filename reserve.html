@@ -1,16 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+        integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+        crossorigin="anonymous" />
 </head>
+
 <body style="background-color:#1B262C;">
     <div class="container" style="color:white">
-        <div class="jumbotron" style="margin-top: 50px;background-color: #0F4C75; border-radius: 6px; padding-top: 30px; padding-bottom: 20px;">
+        <div class="jumbotron"
+            style="margin-top: 50px;background-color: #0F4C75; border-radius: 6px; padding-top: 30px; padding-bottom: 20px;">
             <h1 style="text-align: center; font-size: 60px;"> <i class="fas fa-fire"></i> Hot Restaraunt</h1>
             <hr style="margin: 15px;">
             <h3 class="" style="text-align: center">We only 5 tables! Book your seat before they are all gone!</h3>
@@ -20,12 +26,42 @@
                     <span class="fas fa-list-alt"></span>
                     View Tables
                 </button>
-                <button class="btn btn-lg btn-primary">
-                    <span class="far fa-credit-card"></span>
-                    Make a Reservation
+                <button class="btn btn-lg btn-light">
+                    <span class="fas fa-house-user"></span>
                 </button>
             </div>
-          </div>
+        </div>
+        <div class="container"
+            style="margin-top: 20px;background-color: #0F4C75; border-radius: 6px; padding-top: 30px; padding-bottom: 20px;">
+            <h3 style="padding-left: 10%;">Table Reservation</h3>
+            <hr>
+            <div class="container" style="padding-right: 10%; padding-left: 10%;">
+                <div class="form">
+                    <form>
+                        <div class="form-group">
+                            <label for="userName">Name : </label>
+                            <input type="text" class="form-control" id="userName" placeholder="john Doe">
+                        </div>
+                        <div class="form-group">
+                            <label for="userEmail">Email : </label>
+                            <input type="Email" class="form-control" id="userEmail" placeholder="john.Doe@gmail.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="userPhone">Phone Number : </label>
+                            <input type="phone" class="form-control" id="userPhone" placeholder="+61400000000">
+                        </div>
+                        <div class="form-group">
+                            <label for="userId">Unique ID : </label>
+                            <input type="text" class="form-control" id="userId" placeholder="ZyxBg">
+                        </div>
+                        <div style="padding-top: 20px; text-align: center;">
+                            <button type="button" class="btn btn-lg btn-primary">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
     </div>
     <footer id="footer" style="color:white;">
         <div class="container">
@@ -37,4 +73,5 @@
         </div>
     </footer>
 </body>
+
 </html>
